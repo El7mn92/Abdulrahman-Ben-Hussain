@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdulrahman Ben Hussain — Computer Engineer</title>
+  <meta name="description" content="Abdulrahman Hassan Ben Hussain — Computer Engineer and Manager of Technical Support & Service Desk at Boubyan Bank, Kuwait.">
+  <meta property="og:title" content="Abdulrahman Ben Hussain — Computer Engineer">
+  <meta property="og:description" content="Manager, Technical Support & Service Desk at Boubyan Bank.">
+  <meta property="og:image" content="assets/profile.jpg">
+  <link rel="icon" href="assets/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f8fc;
+      --surface: #ffffff;
+      --text: #14213d;
+      --muted: #5b6b85;
+      --line: #dfe6f0;
+      --accent: #1f5fbf;
+      --accent-soft: #e6effb;
+      --hero-from: #0f2a55;
+      --hero-to: #1f5fbf;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c1424;
+        --surface: #121d33;
+        --text: #e7edf7;
+        --muted: #9aaac4;
+        --line: #22314f;
+        --accent: #6fa3ff;
+        --accent-soft: #1a2a4a;
+        --hero-from: #0a1a36;
+        --hero-to: #173f82;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; gap: 16px; }
+    nav .brand { font-weight: 700; text-decoration: none; white-space: nowrap; }
+    nav ul { display: flex; gap: 22px; list-style: none; overflow-x: auto; scrollbar-width: none; }
+    nav ul::-webkit-scrollbar { display: none; }
+    nav ul a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; white-space: nowrap; }
+    nav ul a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+      color: #fff;
+      padding: 64px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 85% 20%, rgba(255,255,255,.14), transparent 45%);
+      pointer-events: none;
+    }
+    .hero .wrap { display: flex; align-items: center; gap: 48px; position: relative; z-index: 1; }
+    .photo {
+      width: 220px; height: 220px; flex-shrink: 0;
+      border-radius: 50%; object-fit: cover;
+      border: 5px solid rgba(255,255,255,.85);
+      box-shadow: 0 20px 50px rgba(0,0,0,.3);
+    }
+    .hero h1 { font-family: "Fraunces", Georgia, serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.15; font-weight: 600; }
+    .hero .role { font-size: 18px; opacity: .92; margin-top: 8px; }
+    .hero .org { font-size: 15px; opacity: .75; margin-top: 2px; }
+    .hero p.summary { margin-top: 18px; max-width: 560px; opacity: .9; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 16px; border-radius: 999px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.1);
+      transition: background .2s, transform .2s;
+    }
+    .btn:hover { background: rgba(255,255,255,.2); transform: translateY(-1px); }
+    .btn.primary { background: #fff; color: #0f2a55; border-color: #fff; }
+    .btn.primary:hover { background: #eaf1fd; }
+    .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -36px; position: relative; z-index: 2; }
+    .stat {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 18px 20px; box-shadow: 0 8px 24px rgba(15,42,85,.08);
+    }
+    .stat b { display: block; font-size: 28px; color: var(--accent); line-height: 1.1; }
+    .stat span { font-size: 13px; color: var(--muted); }
+
+    /* Sections */
+    section { padding: 56px 0 8px; scroll-margin-top: 60px; }
+    h2 {
+      font-family: "Fraunces", Georgia, serif; font-weight: 600;
+      font-size: 28px; margin-bottom: 24px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .tl-item { position: relative; padding-bottom: 22px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -27px; top: 6px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--surface); border: 3px solid var(--accent);
+    }
+    .tl-item.current::before { background: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
+    .tl-date { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: .02em; }
+    .tl-title { font-weight: 600; font-size: 17px; }
+    .tl-sub { color: var(--muted); font-size: 14px; }
+
+    /* Skills */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card h3 { font-size: 15px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--accent-soft); color: var(--text);
+      border-radius: 999px; padding: 5px 12px; font-size: 13.5px; font-weight: 500;
+    }
+
+    /* Awards */
+    .awards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+    .award { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: flex; gap: 12px; }
+    .award .ic { font-size: 20px; line-height: 1.3; }
+    .award b { display: block; font-size: 15px; line-height: 1.35; }
+    .award span { color: var(--muted); font-size: 13px; }
+
+    /* Courses */
+    .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 0 28px; }
+    .course { display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px dashed var(--line); }
+    .course time { flex: 0 0 74px; font-size: 13px; font-weight: 600; color: var(--accent); padding-top: 1px; }
+    .course div { font-size: 14.5px; }
+    .course small { display: block; color: var(--muted); font-size: 13px; }
+    .degree { display: flex; gap: 18px; align-items: center; margin-bottom: 20px; }
+    .degree .ic { font-size: 30px; }
+    .degree b { font-size: 18px; display: block; }
+    .degree span { color: var(--muted); }
+
+    /* Memberships */
+    .groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+    .groups ul { list-style: none; }
+    .groups li { font-size: 14.5px; padding: 4px 0; }
+    .groups li b { color: var(--accent); font-weight: 600; margin-right: 6px; }
+
+    footer { text-align: center; color: var(--muted); font-size: 14px; padding: 56px 0 40px; }
+    footer .actions { justify-content: center; margin-bottom: 20px; }
+    footer .btn { color: var(--text); border-color: var(--line); background: var(--surface); }
+    footer .btn:hover { background: var(--accent-soft); }
+
+    @media (max-width: 760px) {
+      .hero { padding: 40px 0 64px; text-align: center; }
+      .hero .wrap { flex-direction: column; gap: 24px; }
+      .hero p.summary { margin-left: auto; margin-right: auto; }
+      .actions { justify-content: center; }
+      .photo { width: 160px; height: 160px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; }
+      nav .brand { display: none; }
+      nav .wrap { justify-content: center; }
+    }
+    @media print {
+      nav, .actions { display: none; }
+      .hero { background: none; color: var(--text); padding: 20px 0; }
+      .photo { border-color: var(--line); box-shadow: none; }
+      .stats { margin-top: 0; }
+      section { padding-top: 24px; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#top">A. Ben Hussain</a>
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#memberships">Memberships</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <img class="photo" src="assets/profile.jpg" alt="Portrait of Abdulrahman Ben Hussain" width="220" height="220">
+      <div>
+        <h1>Abdulrahman Hassan<br>Ben Hussain</h1>
+        <div class="role">Computer Engineer · Manager, Technical Support &amp; Service Desk</div>
+        <div class="org">Boubyan Bank · Kuwait</div>
+        <p class="summary">
+          Computer Engineer with a decade of experience in IT infrastructure, end-user technology and
+          service delivery — growing from infrastructure engineering at the Ministry of Finance to leading
+          the Technical Support &amp; Service Desk team at Boubyan Bank.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="assets/AbdulrahmanBinHussain_CV_2026.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+            Download CV
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/abdulrahman-bin-hussain-2a1b17b9" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="mailto:abinhussainmof@hotmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="stats">
+      <div class="stat"><b>10+</b><span>Years in IT</span></div>
+      <div class="stat"><b>6</b><span>Roles held</span></div>
+      <div class="stat"><b>11</b><span>Awards &amp; honors</span></div>
+      <div class="stat"><b>35+</b><span>Courses &amp; certifications</span></div>
+    </div>
+
+    <section id="experience">
+      <h2>Career</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="tl-item current">
+            <div class="tl-date">April 2025 — Present</div>
+            <div class="tl-title">Manager, Technical Support &amp; Service Desk</div>
+            <div class="tl-sub">Boubyan Bank</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">February 2022 — April 2025</div>
+            <div class="tl-title">Assistant Manager, Technical Support &amp; Service Desk</div>
+            <div class="tl-sub">Boubyan Bank</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">February 2021 — February 2022</div>
+            <div class="tl-title">Team Leader, Technical Support</div>
+            <div class="tl-sub">Boubyan Bank</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">February 2020 — February 2021</div>
+            <div class="tl-title">Senior Administrator, Technical Support</div>
+            <div class="tl-sub">Boubyan Bank</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">September 2018 — February 2020</div>
+            <div class="tl-title">Administrator, Technical Support</div>
+            <div class="tl-sub">Boubyan Bank</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">October 2016 — August 2018</div>
+            <div class="tl-title">Infrastructure Engineer</div>
+            <div class="tl-sub">Ministry of Finance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Technical</h3>
+          <div class="tags">
+            <span class="tag">Windows 365</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">AD Manager</span>
+            <span class="tag">Microsoft Exchange</span>
+            <span class="tag">MCSA</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">Networking</span>
+            <span class="tag">IP Telephony</span>
+            <span class="tag">Cisco ISE</span>
+            <span class="tag">VMware vSphere</span>
+            <span class="tag">VMware Horizon</span>
+            <span class="tag">VDI</span>
+            <span class="tag">Workspace ONE</span>
+            <span class="tag">Desktop Central</span>
+            <span class="tag">ServiceDesk Plus</span>
+            <span class="tag">Nexthink</span>
+            <span class="tag">Shared Folders</span>
+            <span class="tag">Security Hardening</span>
+            <span class="tag">CrowdStrike</span>
+            <span class="tag">Trend Micro</span>
+            <span class="tag">ATMs</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Leadership &amp; Soft Skills</h3>
+          <div class="tags">
+            <span class="tag">Leadership</span>
+            <span class="tag">Team Building</span>
+            <span class="tag">Delegation</span>
+            <span class="tag">Decision Making</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Communication</span>
+            <span class="tag">Negotiation</span>
+            <span class="tag">Conflict Resolution</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Stress Management</span>
+            <span class="tag">Adaptability</span>
+            <span class="tag">Creativity</span>
+            <span class="tag">Empathy</span>
+            <span class="tag">Listening Skills</span>
+          </div>
+          <h3 style="margin-top:22px">Languages</h3>
+          <div class="tags">
+            <span class="tag">Arabic — Native</span>
+            <span class="tag">English — Advanced</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards &amp; Honors</h2>
+      <div class="awards">
+        <div class="award"><div class="ic">🏆</div><div><b>3rd Place — Motawerkw</b><span>Central Bank of Kuwait · 2026</span></div></div>
+        <div class="award"><div class="ic">🤖</div><div><b>AI Transformation Technical Owner</b><span>2026</span></div></div>
+        <div class="award"><div class="ic">⭐</div><div><b>OHI Champion for ITG</b><span>Boubyan Bank · 2025</span></div></div>
+        <div class="award"><div class="ic">📚</div><div><b>HR Learning Champion</b><span>Boubyan Bank · 2025</span></div></div>
+        <div class="award"><div class="ic">🚀</div><div><b>High Potential Employee Pool</b><span>Boubyan Bank · 2023</span></div></div>
+        <div class="award"><div class="ic">🎖️</div><div><b>CXM Q2 Award</b><span>Boubyan Bank · 2022</span></div></div>
+        <div class="award"><div class="ic">🎖️</div><div><b>CXM Q3 Award</b><span>Boubyan Bank · 2021</span></div></div>
+        <div class="award"><div class="ic">🥇</div><div><b>Best Employee</b><span>Boubyan Bank · 2021</span></div></div>
+        <div class="award"><div class="ic">⚙️</div><div><b>Best Lean Project Award (Bank-wide)</b><span>Boubyan Bank · 2021</span></div></div>
+        <div class="award"><div class="ic">🎖️</div><div><b>CXM Q2 Award</b><span>Boubyan Bank · 2019</span></div></div>
+        <div class="award"><div class="ic">🥈</div><div><b>GCC Robotics Competition — 2nd Place</b><span>December 2015</span></div></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education &amp; Courses</h2>
+      <div class="card">
+        <div class="degree">
+          <div class="ic">🎓</div>
+          <div><b>B.S. Computer Engineering</b><span>Kuwait University · May 2016</span></div>
+        </div>
+        <div class="courses">
+          <div class="course"><time>Dec 2025</time><div>Final Stage of Motawerkw<small>Central Bank of Kuwait</small></div></div>
+          <div class="course"><time>Dec 2025</time><div>Innovation Challenge — Executive Education<small>Imperial College London</small></div></div>
+          <div class="course"><time>Jul 2024</time><div>Exercising Leadership<small>Harvard Online</small></div></div>
+          <div class="course"><time>Jun 2023</time><div>Aspiring Leaders</div></div>
+          <div class="course"><time>May 2023</time><div>Blue Prism Foundation Training<small>Coursera</small></div></div>
+          <div class="course"><time>May 2023</time><div>Coursera 2023 — Main Program<small>Coursera</small></div></div>
+          <div class="course"><time>Nov 2022</time><div>VMware Explore 2022 Europe</div></div>
+          <div class="course"><time>Nov 2022</time><div>Full-Stack Web Development</div></div>
+          <div class="course"><time>Oct 2022</time><div>Managerial Presence &amp; Communication Excellence</div></div>
+          <div class="course"><time>Oct 2022</time><div>Project Structuring for Sound Execution</div></div>
+          <div class="course"><time>Oct 2022</time><div>Coaching Skills &amp; Effective Feedback Mechanisms</div></div>
+          <div class="course"><time>Aug 2022</time><div>Lean Management</div></div>
+          <div class="course"><time>Aug 2022</time><div>Mini MBA</div></div>
+          <div class="course"><time>Jun 2022</time><div>Advanced Negotiation &amp; Managing Disputes</div></div>
+          <div class="course"><time>Dec 2021</time><div>Developing Secure Software</div></div>
+          <div class="course"><time>Dec 2021</time><div>Security Tips</div></div>
+          <div class="course"><time>Dec 2021</time><div>Mindful Stress Management</div></div>
+          <div class="course"><time>Dec 2021</time><div>Learning Cryptography &amp; Network Security</div></div>
+          <div class="course"><time>Dec 2021</time><div>Improving Your Listening Skills</div></div>
+          <div class="course"><time>Dec 2021</time><div>Graphic Design Tips &amp; Tricks</div></div>
+          <div class="course"><time>Dec 2021</time><div>Google Ads Essential Training</div></div>
+          <div class="course"><time>Jun 2021</time><div>Tabletop Exercise — ISO 27001 &amp; CBK Cyber Security Framework<small>Group 2</small></div></div>
+          <div class="course"><time>Nov 2020</time><div>Innovation with Design Thinking</div></div>
+          <div class="course"><time>Oct 2020</time><div>Effective Problem Solving &amp; Decision Making in the Workplace</div></div>
+          <div class="course"><time>Sep 2020</time><div>IT Security Awareness</div></div>
+          <div class="course"><time>Jul 2020</time><div>Building High-Performance Teams</div></div>
+          <div class="course"><time>Oct 2019</time><div>Supervisory Skills for First-Time Leaders</div></div>
+          <div class="course"><time>Aug 2019</time><div>Business Etiquette</div></div>
+          <div class="course"><time>Apr 2019</time><div>ITIL v3 Foundation Certificate</div></div>
+          <div class="course"><time>May 2017</time><div>VMware</div></div>
+          <div class="course"><time>Apr 2017</time><div>Windows Server 2012</div></div>
+          <div class="course"><time>Jan 2017</time><div>Microsoft Azure Conference</div></div>
+          <div class="course"><time>Jan 2016</time><div>iOS Application Development<small>CPE</small></div></div>
+          <div class="course"><time>Jan 2016</time><div>Unity 3D</div></div>
+          <div class="course"><time>Jan 2016</time><div>Swift</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="memberships">
+      <h2>Memberships &amp; Committees</h2>
+      <div class="groups">
+        <div class="card">
+          <h3>Boubyan Bank</h3>
+          <ul><li><b>2022</b>IT Engage Team</li></ul>
+        </div>
+        <div class="card">
+          <h3>Ministry of Finance</h3>
+          <ul>
+            <li><b>2017</b>Data Center Disaster Recovery Committee</li>
+            <li><b>2017</b>SharePoint Infrastructure Team</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Computer Engineering Society</h3>
+          <ul><li><b>2016</b>Media Committee Member</li></ul>
+        </div>
+        <div class="card">
+          <h3>Student Union</h3>
+          <ul>
+            <li><b>2014</b>Member</li>
+            <li><b>2013</b>Media Committee Member</li>
+            <li><b>2012</b>Head of Media Committee</li>
+            <li><b>2011</b>Media Committee Member</li>
+            <li><b>2010</b>Member</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <h2 style="justify-content:center">Get in touch</h2>
+      <div class="actions">
+        <a class="btn" href="mailto:abinhussainmof@hotmail.com">abinhussainmof@hotmail.com</a>
+        <a class="btn" href="tel:+96597101764">+965 9710 1764</a>
+        <a class="btn" href="https://www.linkedin.com/in/abdulrahman-bin-hussain-2a1b17b9" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p>© 2026 Abdulrahman Hassan Ben Hussain</p>
+    </div>
+  </footer>
+
+</body>
+</html>
