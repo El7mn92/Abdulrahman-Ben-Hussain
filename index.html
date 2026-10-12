@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abdulrahman Ben Hussain — Computer Engineer</title>
-  <meta name="description" content="Abdulrahman Hassan Ben Hussain — Computer Engineer and Manager of Technical Support & Service Desk at Boubyan Bank, Kuwait.">
-  <meta property="og:title" content="Abdulrahman Ben Hussain — Computer Engineer">
-  <meta property="og:description" content="Manager, Technical Support & Service Desk at Boubyan Bank.">
+  <title>Abdulrahman Ben Hussain — IT Operations &amp; Transformation Leader</title>
+  <meta name="description" content="Abdulrahman Ben Hussain — IT operations and AI transformation leader at Boubyan Bank, and founder of Perfection Team, a marketing and creative agency.">
+  <meta property="og:title" content="Abdulrahman Ben Hussain — IT Operations &amp; Transformation Leader">
+  <meta property="og:description" content="Leads a 24-person IT team serving 2,000+ employees at Boubyan Bank. Founder of Perfection Team, helping 100+ businesses grow.">
   <meta property="og:image" content="assets/profile.jpg">
   <link rel="icon" href="assets/profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +50,10 @@
     }
     a { color: inherit; }
     ::selection { background: var(--accent); color: var(--on-accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     .wrap { max-width: 1320px; margin: 0 auto; padding: 0 var(--pad); }
     .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    h2, h3 { text-wrap: balance; }
 
     /* Nav */
     nav {
@@ -63,7 +65,7 @@
     nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 20px; }
     .brand { font-family: var(--display); font-weight: 800; font-size: 20px; text-decoration: none; letter-spacing: -.02em; white-space: nowrap; }
     .brand span { color: var(--accent); }
-    nav ul { display: flex; gap: 28px; list-style: none; }
+    nav ul { display: flex; gap: 24px; list-style: none; }
     nav ul a { text-decoration: none; position: relative; }
     nav ul a::after {
       content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px;
@@ -75,7 +77,7 @@
       padding: 12px 22px; border-radius: 999px;
       border: 1px solid var(--line); background: transparent;
       font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
-      text-decoration: none; white-space: nowrap;
+      text-decoration: none; white-space: nowrap; cursor: pointer; color: inherit;
       transition: background .25s, color .25s, border-color .25s;
     }
     .pill:hover { background: var(--ink); color: var(--bg); }
@@ -98,13 +100,20 @@
     .hero h1 .line { display: block; }
     .hero h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
     .hero h1 .accent { color: var(--accent); }
+    .hero-role {
+      font-family: var(--display); font-weight: 700; text-transform: uppercase;
+      font-size: clamp(18px, 2.2vw, 30px); letter-spacing: -.01em; line-height: 1.1;
+      margin-top: clamp(18px, 2.4vw, 28px);
+    }
+    .hero-role span { color: var(--accent); }
     .hero-grid {
       display: grid; grid-template-columns: 1.1fr 1fr 220px; gap: clamp(20px, 3vw, 48px);
-      align-items: end; margin-top: clamp(28px, 4vw, 56px);
+      align-items: end; margin-top: clamp(28px, 4vw, 48px);
       padding-bottom: clamp(32px, 4vw, 56px);
     }
-    .hero-grid .lead { font-size: clamp(18px, 1.6vw, 22px); line-height: 1.4; max-width: 520px; }
-    .hero-grid .lead em { font-style: normal; background: var(--accent); color: var(--on-accent); padding: 0 6px; }
+    .hero-grid > * { min-width: 0; }
+    .hero-grid .lead { font-size: clamp(18px, 1.6vw, 22px); line-height: 1.4; max-width: 540px; }
+    .hero-grid .lead em { font-style: normal; background: var(--accent); color: var(--on-accent); padding: 0 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
     .hero-meta { display: grid; gap: 14px; }
     .hero-meta div { border-top: 1px solid var(--line); padding-top: 10px; }
     .hero-meta b { display: block; font-weight: 500; font-size: 16px; }
@@ -134,7 +143,7 @@
       background: var(--accent); color: var(--on-accent);
       overflow: hidden; white-space: nowrap; padding: 18px 0;
     }
-    .marquee-track { display: inline-flex; animation: scroll 38s linear infinite; }
+    .marquee-track { display: inline-flex; animation: scroll 42s linear infinite; }
     .marquee span {
       font-family: var(--display); font-weight: 700; text-transform: uppercase;
       font-size: clamp(22px, 3vw, 40px); letter-spacing: -.02em; padding-right: 32px;
@@ -142,11 +151,12 @@
     .marquee span::after { content: "✦"; padding-left: 32px; }
     @keyframes scroll { to { transform: translateX(-50%); } }
 
-    /* Stats */
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+    /* Impact numbers */
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
     .stat { padding: clamp(24px, 3vw, 44px) var(--pad); border-right: 1px solid var(--line); }
-    .stat:last-child { border-right: 0; }
-    .stat b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(48px, 6vw, 96px); line-height: 1; letter-spacing: -.04em; }
+    .stat:nth-child(4n) { border-right: 0; }
+    .stat:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+    .stat b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(34px, 5vw, 84px); line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
     .stat b sup { color: var(--accent); font-size: .5em; vertical-align: .7em; }
     .stat .mono { color: var(--muted); margin-top: 10px; display: block; }
 
@@ -162,6 +172,54 @@
       font-size: clamp(28px, 7.5vw, 112px); line-height: .9; letter-spacing: -.04em;
     }
     .sec-head h2 .accent { color: var(--accent); }
+    .sec-intro { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 24px 0 0; }
+    .sec-intro p { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.45; max-width: 760px; }
+
+    /* What I lead */
+    .pillars { display: grid; grid-template-columns: 1fr 1fr; }
+    .pillar { padding: clamp(28px, 3vw, 44px) clamp(20px, 3vw, 44px) clamp(28px, 3vw, 44px) 0; border-bottom: 1px solid var(--line); display: grid; gap: 14px; align-content: start; }
+    .pillar:nth-child(2n) { padding-left: clamp(20px, 3vw, 44px); padding-right: 0; border-left: 1px solid var(--line); }
+    .pillar .mono { color: var(--accent); }
+    .pillar h3 { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.05; letter-spacing: -.02em; }
+    .pillar p { color: var(--muted); max-width: 560px; }
+    .pillar ul { list-style: none; display: grid; }
+    .pillar li { padding: 10px 0 10px 26px; border-top: 1px solid var(--soft-line); position: relative; font-size: 15px; }
+    .pillar li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: 1fr 1fr; }
+    .project { padding: clamp(28px, 3vw, 44px) clamp(20px, 3vw, 44px) clamp(28px, 3vw, 44px) 0; border-bottom: 1px solid var(--line); display: grid; gap: 14px; align-content: start; }
+    .project:nth-child(2n+1):not(.feature) { padding-left: clamp(20px, 3vw, 44px); padding-right: 0; border-left: 1px solid var(--line); }
+    .project.feature { grid-column: 1 / -1; grid-template-columns: 1fr auto; align-items: end; padding-right: 0; gap: 14px 48px; }
+    .project .mono { color: var(--muted); }
+    .project h3 { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.8vw, 40px); line-height: 1.05; letter-spacing: -.02em; }
+    .project p { max-width: 600px; }
+    .project .result { font-family: var(--display); font-weight: 800; color: var(--accent); font-size: clamp(64px, 11vw, 168px); line-height: .85; letter-spacing: -.05em; }
+    .project .result small { display: block; font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 12px; text-align: right; }
+    .project .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .project .tags span { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--soft-line); border-radius: 999px; padding: 4px 10px; color: var(--muted); }
+
+    /* Entrepreneurship */
+    .venture { background: var(--accent); color: var(--on-accent); margin-top: clamp(64px, 9vw, 140px); scroll-margin-top: 64px; }
+    .venture .wrap { padding-top: clamp(56px, 8vw, 110px); padding-bottom: clamp(56px, 8vw, 110px); }
+    .venture .eyebrow { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .venture h2 {
+      font-family: var(--display); font-weight: 800; text-transform: uppercase;
+      font-size: calc((min(100vw, 1320px) - 2 * var(--pad)) / 12.6); /* "PERFECTION" fills the row */
+      line-height: .86; letter-spacing: -.045em;
+      margin: 20px 0 clamp(24px, 3vw, 40px);
+    }
+    .venture .v-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 4vw, 64px); border-top: 1px solid var(--on-accent); padding-top: clamp(24px, 3vw, 40px); }
+    .venture .v-grid > * { min-width: 0; }
+    .venture .v-lead { font-size: clamp(18px, 1.8vw, 24px); line-height: 1.4; max-width: 620px; }
+    .venture .v-lead + .v-lead { margin-top: 16px; font-size: 16px; line-height: 1.55; }
+    .v-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .v-stats div { border-bottom: 1px solid var(--on-accent); padding: 0 0 18px; }
+    .v-stats div + div { padding-left: 20px; border-left: 1px solid var(--on-accent); }
+    .v-stats b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(48px, 6vw, 88px); line-height: 1; letter-spacing: -.04em; }
+    .v-services { list-style: none; margin-top: 8px; }
+    .v-services li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid color-mix(in srgb, var(--on-accent) 35%, transparent); font-family: var(--display); font-weight: 700; font-size: clamp(18px, 1.8vw, 22px); }
+    .v-services li .mono { font-family: var(--mono); font-weight: 400; align-self: center; text-align: right; }
 
     /* Career rows */
     .rows { list-style: none; }
@@ -169,8 +227,9 @@
       display: grid; grid-template-columns: 200px 1fr auto; gap: 24px; align-items: center;
       padding: clamp(20px, 2.4vw, 32px) 0; border-bottom: 1px solid var(--line);
       position: relative; isolation: isolate;
-      transition: color .35s, padding .35s;
+      transition: color .35s;
     }
+    .row > * { min-width: 0; }
     .row::before {
       content: ""; position: absolute; inset: 0 calc(var(--pad) * -1); z-index: -1;
       background: var(--ink); transform: scaleY(0); transform-origin: bottom;
@@ -181,6 +240,7 @@
     .row .mono { color: inherit; opacity: .7; }
     .row h3 { font-family: var(--display); font-weight: 700; font-size: clamp(22px, 2.8vw, 40px); line-height: 1.05; letter-spacing: -.02em; }
     .row .org { font-size: 15px; opacity: .75; margin-top: 4px; }
+    .row .note { font-size: 15px; margin-top: 10px; max-width: 720px; }
     .row .tag-now {
       font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
       background: var(--accent); color: var(--on-accent); border-radius: 999px; padding: 6px 12px; white-space: nowrap;
@@ -189,10 +249,10 @@
     .row:hover .arrow { transform: rotate(-45deg); }
 
     /* Skills */
-    .skills { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
-    .skills > div { padding: clamp(24px, 3vw, 44px) 0; }
-    .skills > div + div { border-left: 1px solid var(--line); padding-left: clamp(20px, 3vw, 44px); }
-    .skills > div:first-child { padding-right: clamp(20px, 3vw, 44px); }
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+    .skills > div { padding: clamp(24px, 3vw, 44px) clamp(16px, 2.4vw, 36px) clamp(24px, 3vw, 44px) 0; min-width: 0; }
+    .skills > div + div { border-left: 1px solid var(--line); padding-left: clamp(16px, 2.4vw, 36px); }
+    .skills > div:last-child { padding-right: 0; }
     .skills h3 { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip {
@@ -200,7 +260,12 @@
       font-size: 14.5px; transition: background .2s, color .2s, border-color .2s;
     }
     .chip:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-    .langs { margin-top: 32px; display: grid; gap: 0; }
+    .stack { list-style: none; }
+    .stack li { padding: 12px 0; border-top: 1px solid var(--soft-line); }
+    .stack li:first-child { border-top: 0; padding-top: 0; }
+    .stack b { display: block; font-weight: 600; font-size: 15px; }
+    .stack span { color: var(--muted); font-size: 14px; }
+    .langs { margin-top: 28px; }
     .lang { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid var(--soft-line); font-family: var(--display); font-weight: 700; font-size: 22px; }
     .lang .mono { color: var(--muted); font-family: var(--mono); font-weight: 400; align-self: center; }
 
@@ -208,12 +273,17 @@
     .awards { display: grid; grid-template-columns: repeat(3, 1fr); }
     .award {
       padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line);
-      display: grid; grid-template-rows: auto 1fr auto; gap: 18px; min-height: 210px;
+      display: grid; grid-template-rows: auto 1fr auto; gap: 18px; min-height: 200px;
     }
     .award:not(:nth-child(3n+1)) { padding-left: 24px; border-left: 1px solid var(--line); }
     .award .yr { font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -.03em; color: var(--accent); }
     .award b { font-family: var(--display); font-weight: 700; font-size: 21px; line-height: 1.15; letter-spacing: -.01em; }
     .award .mono { color: var(--muted); }
+    .committees { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .committees .mono { color: var(--muted); padding-top: 3px; }
+    .committees ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+    .committees li { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid var(--soft-line); font-size: 15px; }
+    .committees li .mono { color: var(--accent); }
 
     /* Education */
     .degree {
@@ -223,21 +293,18 @@
     .degree h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(30px, 4.6vw, 68px); line-height: .95; letter-spacing: -.03em; }
     .degree p { margin-top: 10px; color: var(--muted); font-size: 17px; }
     .degree .big { font-family: var(--display); font-weight: 800; font-size: clamp(48px, 7vw, 110px); line-height: .9; color: var(--accent); letter-spacing: -.04em; }
+    .sub-label { color: var(--muted); padding: 28px 0 6px; display: block; }
     .courses { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: clamp(20px, 3vw, 44px); }
     .course { display: grid; grid-template-columns: 78px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--soft-line); }
     .course time { color: var(--muted); padding-top: 2px; }
     .course div { font-size: 15px; line-height: 1.4; }
     .course small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-    .more { margin-top: 28px; display: flex; justify-content: center; }
-
-    /* Memberships */
-    .groups { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .group { padding: 28px 24px 32px 0; border-bottom: 1px solid var(--line); }
-    .group + .group { padding-left: 24px; border-left: 1px solid var(--line); }
-    .group h3 { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin-bottom: 18px; }
-    .group ul { list-style: none; }
-    .group li { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 8px 0; border-top: 1px solid var(--soft-line); font-size: 14.5px; }
-    .group li .mono { color: var(--accent); padding-top: 2px; }
+    .course.key div { font-weight: 600; }
+    details.all { margin-top: 28px; }
+    details.all summary { list-style: none; display: flex; justify-content: center; }
+    details.all summary::-webkit-details-marker { display: none; }
+    details.all[open] summary .open-label, details.all:not([open]) summary .close-label { display: none; }
+    details.all .courses { margin-top: 20px; }
 
     /* Footer / contact */
     footer { margin-top: clamp(80px, 11vw, 160px); background: var(--ink); color: var(--bg); padding: clamp(56px, 8vw, 110px) 0 28px; scroll-margin-top: 64px; }
@@ -273,6 +340,9 @@
     }
 
     /* Responsive */
+    @media (max-width: 1100px) {
+      nav ul { gap: 16px; }
+    }
     @media (max-width: 1000px) {
       .hero-grid { grid-template-columns: 1fr 200px; }
       .hero-grid .hero-meta { grid-column: 1 / -1; grid-row: 3; grid-template-columns: repeat(3, 1fr); }
@@ -280,34 +350,43 @@
       .award:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
       .award:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
       .courses { grid-template-columns: 1fr 1fr; }
-      .groups { grid-template-columns: 1fr 1fr; }
-      .group + .group { padding-left: 0; border-left: 0; }
-      .group:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
+      .skills { grid-template-columns: 1fr 1fr; }
+      .skills > div:nth-child(3) { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
+      .venture .v-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      nav ul { display: none; }
     }
     @media (max-width: 760px) {
-      nav ul { display: none; }
       .hero h1 .outline { -webkit-text-stroke-width: 1.5px; }
       .hero-grid { grid-template-columns: 1fr; }
       .photo-wrap { max-width: 240px; margin: 12px 0 0 26px; grid-row: 1; }
       .hero-grid .hero-meta { grid-row: auto; grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat:nth-child(2) { border-right: 0; }
-      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .sec-head { grid-template-columns: 1fr; gap: 6px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stat b { font-size: 9vw; }
+      .stat, .stat:nth-child(4n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .stat:nth-child(2n) { border-right: 0; }
+      .stat:nth-last-child(-n+2) { border-bottom: 0; }
+      .sec-head, .sec-intro, .committees { grid-template-columns: 1fr; gap: 6px; }
       .sec-head .mono { padding-bottom: 0; }
+      .sec-intro > span { display: none; }
+      .pillars, .projects { grid-template-columns: 1fr; }
+      .pillar, .pillar:nth-child(2n), .project, .project:nth-child(2n+1):not(.feature) { padding-left: 0; padding-right: 0; border-left: 0; }
+      .project.feature { grid-template-columns: 1fr; }
+      .project .result small { text-align: left; }
       .row { grid-template-columns: 1fr auto; gap: 8px 16px; }
       .row .mono { grid-column: 1 / -1; }
       .row .arrow { display: none; }
       .skills { grid-template-columns: 1fr; }
       .skills > div + div { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
       .skills > div:first-child { padding-right: 0; }
-      .awards, .courses, .groups, .contact-grid { grid-template-columns: 1fr; }
-      .award, .award:nth-child(2n), .group, .group:nth-child(2n) { padding-left: 0; padding-right: 0; border-left: 0; min-height: 0; }
+      .awards, .courses, .contact-grid, .committees ul { grid-template-columns: 1fr; }
+      .award, .award:nth-child(2n) { padding-left: 0; padding-right: 0; border-left: 0; min-height: 0; }
       .contact-grid a + a { padding-left: 0; border-left: 0; border-top: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); }
       .degree { grid-template-columns: 1fr; }
     }
     @media print {
-      nav, .marquee, .badge, .hero-actions, .more, footer .pill { display: none; }
+      nav, .marquee, .badge, .hero-actions, details.all summary, footer .pill { display: none; }
       .reveal { opacity: 1; transform: none; }
       .photo { filter: none; }
       section { padding-top: 28px; break-inside: avoid; }
@@ -321,11 +400,12 @@
     <div class="wrap">
       <a class="brand" href="#top">ABH<span>.</span></a>
       <ul class="mono">
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#entrepreneurship">Entrepreneurship</a></li>
         <li><a href="#experience">Career</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#awards">Awards</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#memberships">Memberships</a></li>
       </ul>
       <a class="pill nav-cta" href="#contact">Contact ↗</a>
     </div>
@@ -334,18 +414,20 @@
   <header class="hero" id="top">
     <div class="wrap">
       <div class="hero-top mono">
-        <span><i class="dot"></i>Kuwait · Boubyan Bank</span>
-        <span>Computer Engineer — Since 2016</span>
+        <span><i class="dot"></i>Kuwait · Boubyan Bank · Perfection Team</span>
+        <span>10 years in IT · 13+ years in business</span>
       </div>
       <h1>
         <span class="line">Abdulrahman</span>
         <span class="line"><span class="outline">Ben</span> Hussain<span class="accent">.</span></span>
       </h1>
+      <p class="hero-role">IT Operations <span>&amp;</span> Transformation Leader <span>·</span> Entrepreneur</p>
       <div class="hero-grid">
         <div>
           <p class="lead">
-            Computer Engineer leading the <em>Technical Support &amp; Service Desk</em> at Boubyan Bank —
-            a decade spent in IT infrastructure, end-user technology and service delivery.
+            I lead technology operations for <em>2,000+ employees across 46 branches</em> at Boubyan Bank,
+            drive the bank's AI transformation on the IT side, and run a marketing and creative agency
+            that has helped 100+ businesses grow.
           </p>
           <div class="hero-actions">
             <a class="pill solid" href="assets/AbdulrahmanBinHussain_CV_2026.pdf" download>
@@ -356,15 +438,15 @@
           </div>
         </div>
         <div class="hero-meta">
-          <div><span class="mono">Current role</span><b>Manager, Technical Support &amp; Service Desk</b></div>
-          <div><span class="mono">Organisation</span><b>Boubyan Bank, Kuwait</b></div>
-          <div><span class="mono">Degree</span><b>B.S. Computer Engineering, Kuwait University</b></div>
+          <div><span class="mono">Leading</span><b>Technical Support &amp; Service Desk, Boubyan Bank · 24-person team</b></div>
+          <div><span class="mono">Driving</span><b>IT Ambassador, AI Transformation · AI Academy instructor</b></div>
+          <div><span class="mono">Building</span><b>Founder &amp; Lead Expert, Perfection Team</b></div>
         </div>
         <div class="photo-wrap">
           <div class="badge" aria-hidden="true">
             <svg viewBox="0 0 100 100">
               <defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
-              <text><textPath href="#circ">IT Leader · Service Desk · </textPath></text>
+              <text><textPath href="#circ">IT Leader · Entrepreneur · </textPath></text>
             </svg>
           </div>
           <img class="photo" src="assets/profile.jpg" alt="Portrait of Abdulrahman Ben Hussain" width="220" height="275">
@@ -375,39 +457,179 @@
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Service Desk</span><span>Active Directory</span><span>VMware Horizon</span><span>Windows 365</span><span>Leadership</span><span>Cisco ISE</span><span>Nexthink</span><span>ITIL</span><span>Workspace ONE</span><span>CrowdStrike</span>
-      <span>Service Desk</span><span>Active Directory</span><span>VMware Horizon</span><span>Windows 365</span><span>Leadership</span><span>Cisco ISE</span><span>Nexthink</span><span>ITIL</span><span>Workspace ONE</span><span>CrowdStrike</span>
+      <span>IT Operations</span><span>AI Transformation</span><span>Service Excellence</span><span>Cloud Strategy</span><span>Team Leadership</span><span>Digital Marketing</span><span>Brand Building</span><span>Lean Improvement</span><span>Innovation</span>
+      <span>IT Operations</span><span>AI Transformation</span><span>Service Excellence</span><span>Cloud Strategy</span><span>Team Leadership</span><span>Digital Marketing</span><span>Brand Building</span><span>Lean Improvement</span><span>Innovation</span>
     </div>
   </div>
 
-  <div class="stats">
-    <div class="stat reveal"><b>10<sup>+</sup></b><span class="mono">Years in IT</span></div>
-    <div class="stat reveal"><b>06</b><span class="mono">Roles held</span></div>
-    <div class="stat reveal"><b>11</b><span class="mono">Awards &amp; honors</span></div>
-    <div class="stat reveal"><b>35<sup>+</sup></b><span class="mono">Courses &amp; certs</span></div>
+  <div class="stats" aria-label="Impact in numbers">
+    <div class="stat reveal"><b>24</b><span class="mono">People I lead</span></div>
+    <div class="stat reveal"><b>2,000<sup>+</sup></b><span class="mono">Employees supported</span></div>
+    <div class="stat reveal"><b>55<sup>%</sup></b><span class="mono">Fewer tickets &amp; calls</span></div>
+    <div class="stat reveal"><b>92<sup>%+</sup></b><span class="mono">Customer satisfaction</span></div>
+    <div class="stat reveal"><b>46</b><span class="mono">Branches covered</span></div>
+    <div class="stat reveal"><b>06</b><span class="mono">Subsidiary companies</span></div>
+    <div class="stat reveal"><b>100<sup>+</sup></b><span class="mono">Businesses helped grow</span></div>
+    <div class="stat reveal"><b>13<sup>+</sup></b><span class="mono">Years in marketing &amp; creative</span></div>
   </div>
 
   <main class="wrap">
 
+    <section id="leadership">
+      <div class="sec-head reveal">
+        <span class="mono">(01) — What I lead</span>
+        <h2>Leading<span class="accent">.</span></h2>
+      </div>
+      <div class="sec-intro reveal">
+        <span></span>
+        <p>I run IT as a service to the business: measured by how fast people get back to work, how satisfied they are, and how much demand we remove before it reaches the desk.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <span class="mono">Operations</span>
+          <h3>IT operations at bank scale</h3>
+          <p>End-to-end ownership of technical support and service desk for Boubyan Bank and its group.</p>
+          <ul>
+            <li>24-person team across support and service desk</li>
+            <li>2,000+ employees, 46 branches and 6 subsidiary companies</li>
+            <li>92%+ customer satisfaction</li>
+            <li>ITIL-based service management and SLAs</li>
+          </ul>
+        </article>
+        <article class="pillar reveal">
+          <span class="mono">AI &amp; transformation</span>
+          <h3>IT ambassador for the bank's AI transformation</h3>
+          <p>Own the full IT side of the AI program, across operations and infrastructure, and teach colleagues to use it.</p>
+          <ul>
+            <li>AI Transformation Technical Owner, 2026</li>
+            <li>Instructor at the bank's AI Academy</li>
+            <li>Bank-wide cloud migration and VDI rollout</li>
+            <li>3rd place at Motawerkw, Central Bank of Kuwait, with Pay WAFI</li>
+          </ul>
+        </article>
+        <article class="pillar reveal">
+          <span class="mono">People</span>
+          <h3>Building teams and talent</h3>
+          <p>Grew from administrator to manager through five roles, and now develop the next generation.</p>
+          <ul>
+            <li>Part of the Boubyan Technology Academy, which selects 20 students a year to join the bank</li>
+            <li>OHI Champion for IT Group and HR Learning Champion, 2025</li>
+            <li>Selected for the High Potential Employee pool, 2023</li>
+            <li>IT Engage Team member</li>
+          </ul>
+        </article>
+        <article class="pillar reveal">
+          <span class="mono">Strategy &amp; growth</span>
+          <h3>Business thinking, not only technology</h3>
+          <p>13+ years running an agency taught me to think in customers, brands and revenue. I bring that to every IT decision.</p>
+          <ul>
+            <li>Founder of Perfection Team, 100+ businesses served</li>
+            <li>Best Lean Project Award, bank-wide, 2021</li>
+            <li>Mini MBA, Harvard Exercising Leadership, Imperial College innovation program</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-head reveal">
+        <span class="mono">(02) — Major projects</span>
+        <h2>Projects<span class="accent">.</span></h2>
+      </div>
+      <div class="projects">
+        <article class="project feature reveal">
+          <div>
+            <span class="mono">Service operations · Boubyan Bank</span>
+            <h3 style="margin-top:14px">Cutting IT demand at the source</h3>
+            <p style="margin-top:14px">Reduced the number of support tickets and calls across the bank by 55%, so employees lose less time to IT problems and the team can focus on higher-value work.</p>
+          </div>
+          <div class="result">−55%<small>Tickets &amp; calls</small></div>
+        </article>
+        <article class="project reveal">
+          <span class="mono">Infrastructure · Bank-wide</span>
+          <h3>Cloud migration for the bank</h3>
+          <p>Moved the bank to the cloud, owning the operations and infrastructure side of the migration.</p>
+          <div class="tags"><span>Cloud</span><span>Infrastructure</span><span>Bank-wide</span></div>
+        </article>
+        <article class="project reveal">
+          <span class="mono">End-user computing · Bank-wide</span>
+          <h3>VDI for the whole bank</h3>
+          <p>Delivered virtual desktops to every employee, giving the bank a secure, centrally managed workplace.</p>
+          <div class="tags"><span>VMware Horizon</span><span>VDI</span><span>Security</span></div>
+        </article>
+        <article class="project reveal">
+          <span class="mono">AI · Bank-wide</span>
+          <h3>AI adoption</h3>
+          <p>As IT ambassador for the AI transformation, I own the infrastructure and operations side and train staff through the AI Academy.</p>
+          <div class="tags"><span>AI Academy</span><span>Enablement</span><span>2026</span></div>
+        </article>
+        <article class="project reveal">
+          <span class="mono">Innovation · Central Bank of Kuwait</span>
+          <h3>Pay WAFI</h3>
+          <p>Our solution took 3rd place in Motawerkw, the Central Bank of Kuwait's innovation program, in 2026.</p>
+          <div class="tags"><span>Fintech</span><span>Innovation</span><span>3rd place</span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section class="venture" id="entrepreneurship">
+    <div class="wrap">
+      <div class="eyebrow mono"><span>(03) — Entrepreneurship</span><span>Founder &amp; Lead Expert</span></div>
+      <h2>Perfection<br>Team.</h2>
+      <div class="v-grid">
+        <div>
+          <p class="v-lead reveal">For more than 13 years I have run Perfection Team, a marketing and creative agency. We have helped 100+ companies build their brands, reach customers and grow.</p>
+          <p class="v-lead reveal">The agency is why I approach technology as a business tool. I know what it takes to win a customer, launch a product and make a budget pay back.</p>
+        </div>
+        <div class="reveal">
+          <div class="v-stats">
+            <div><b>13+</b><span class="mono">Years</span></div>
+            <div><b>100+</b><span class="mono">Companies served</span></div>
+          </div>
+          <ul class="v-services">
+            <li>Marketing strategy <span class="mono">Positioning · campaigns</span></li>
+            <li>Brand &amp; creative <span class="mono">Identity · design</span></li>
+            <li>Digital marketing <span class="mono">Ads · social</span></li>
+            <li>Business development <span class="mono">Growth · launch</span></li>
+            <li>Web &amp; app development <span class="mono">Sites · apps</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
     <section id="experience">
       <div class="sec-head reveal">
-        <span class="mono">(01) — Experience</span>
+        <span class="mono">(04) — Career path</span>
         <h2>Career<span class="accent">.</span></h2>
       </div>
       <ol class="rows">
         <li class="row reveal">
           <span class="mono">Apr 2025 — Present</span>
-          <div><h3>Manager, Technical Support &amp; Service Desk</h3><div class="org">Boubyan Bank</div></div>
+          <div>
+            <h3>Manager, Technical Support &amp; Service Desk</h3>
+            <div class="org">Boubyan Bank</div>
+            <p class="note">Lead a 24-person team serving 2,000+ employees, 46 branches and 6 subsidiaries at 92%+ satisfaction. IT ambassador for the AI transformation.</p>
+          </div>
           <span class="tag-now">Current</span>
         </li>
         <li class="row reveal">
           <span class="mono">Feb 2022 — Apr 2025</span>
-          <div><h3>Assistant Manager, Technical Support &amp; Service Desk</h3><div class="org">Boubyan Bank</div></div>
+          <div>
+            <h3>Assistant Manager, Technical Support &amp; Service Desk</h3>
+            <div class="org">Boubyan Bank</div>
+          </div>
           <span class="arrow" aria-hidden="true">→</span>
         </li>
         <li class="row reveal">
           <span class="mono">Feb 2021 — Feb 2022</span>
-          <div><h3>Team Leader, Technical Support</h3><div class="org">Boubyan Bank</div></div>
+          <div>
+            <h3>Team Leader, Technical Support</h3>
+            <div class="org">Boubyan Bank</div>
+            <p class="note">Best Employee and Best Lean Project Award (bank-wide), 2021.</p>
+          </div>
           <span class="arrow" aria-hidden="true">→</span>
         </li>
         <li class="row reveal">
@@ -422,7 +644,19 @@
         </li>
         <li class="row reveal">
           <span class="mono">Oct 2016 — Aug 2018</span>
-          <div><h3>Infrastructure Engineer</h3><div class="org">Ministry of Finance</div></div>
+          <div>
+            <h3>Infrastructure Engineer</h3>
+            <div class="org">Ministry of Finance</div>
+            <p class="note">Data Center Disaster Recovery Committee and SharePoint Infrastructure Team.</p>
+          </div>
+          <span class="arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="row reveal">
+          <span class="mono">2013 — Present</span>
+          <div>
+            <h3>Founder &amp; Lead Expert</h3>
+            <div class="org">Perfection Team · Marketing &amp; creative agency</div>
+          </div>
           <span class="arrow" aria-hidden="true">→</span>
         </li>
       </ol>
@@ -430,53 +664,40 @@
 
     <section id="skills">
       <div class="sec-head reveal">
-        <span class="mono">(02) — Expertise</span>
+        <span class="mono">(05) — Expertise</span>
         <h2>Skills<span class="accent">.</span></h2>
       </div>
       <div class="skills">
         <div class="reveal">
-          <h3>Technical</h3>
+          <h3>Leadership &amp; strategy</h3>
           <div class="chips">
-            <span class="chip">Windows 365</span>
-            <span class="chip">Active Directory</span>
-            <span class="chip">AD Manager</span>
-            <span class="chip">Microsoft Exchange</span>
-            <span class="chip">MCSA</span>
-            <span class="chip">DHCP</span>
-            <span class="chip">Networking</span>
-            <span class="chip">IP Telephony</span>
-            <span class="chip">Cisco ISE</span>
-            <span class="chip">VMware vSphere</span>
-            <span class="chip">VMware Horizon</span>
-            <span class="chip">VDI</span>
-            <span class="chip">Workspace ONE</span>
-            <span class="chip">Desktop Central</span>
-            <span class="chip">ServiceDesk Plus</span>
-            <span class="chip">Nexthink</span>
-            <span class="chip">Shared Folders</span>
-            <span class="chip">Security Hardening</span>
-            <span class="chip">CrowdStrike</span>
-            <span class="chip">Trend Micro</span>
-            <span class="chip">ATMs</span>
+            <span class="chip">IT operations management</span>
+            <span class="chip">Digital &amp; AI transformation</span>
+            <span class="chip">Service excellence</span>
+            <span class="chip">ITIL service management</span>
+            <span class="chip">Change management</span>
+            <span class="chip">Team building</span>
+            <span class="chip">Coaching &amp; feedback</span>
+            <span class="chip">Stakeholder management</span>
+            <span class="chip">Decision making</span>
+            <span class="chip">Negotiation</span>
+            <span class="chip">Conflict resolution</span>
+            <span class="chip">Lean improvement</span>
           </div>
         </div>
         <div class="reveal">
-          <h3>Leadership &amp; Soft Skills</h3>
+          <h3>Business &amp; entrepreneurship</h3>
           <div class="chips">
-            <span class="chip">Leadership</span>
-            <span class="chip">Team Building</span>
-            <span class="chip">Delegation</span>
-            <span class="chip">Decision Making</span>
-            <span class="chip">Problem Solving</span>
-            <span class="chip">Communication</span>
-            <span class="chip">Negotiation</span>
-            <span class="chip">Conflict Resolution</span>
-            <span class="chip">Time Management</span>
-            <span class="chip">Stress Management</span>
-            <span class="chip">Adaptability</span>
-            <span class="chip">Creativity</span>
-            <span class="chip">Empathy</span>
-            <span class="chip">Listening Skills</span>
+            <span class="chip">Marketing strategy</span>
+            <span class="chip">Brand building</span>
+            <span class="chip">Digital marketing</span>
+            <span class="chip">Google Ads</span>
+            <span class="chip">Creative direction</span>
+            <span class="chip">Graphic design</span>
+            <span class="chip">Business development</span>
+            <span class="chip">Product development</span>
+            <span class="chip">Design thinking</span>
+            <span class="chip">Innovation</span>
           </div>
           <div class="langs">
             <h3 style="margin-bottom:6px">Languages</h3>
@@ -484,32 +705,50 @@
             <div class="lang">English <span class="mono">Advanced</span></div>
           </div>
         </div>
+        <div class="reveal">
+          <h3>Technology I oversee</h3>
+          <ul class="stack">
+            <li><b>Cloud &amp; end-user computing</b><span>Windows 365, VMware Horizon, VDI, Workspace ONE, vSphere</span></li>
+            <li><b>Identity &amp; security</b><span>Active Directory, Cisco ISE, CrowdStrike, Trend Micro, hardening</span></li>
+            <li><b>Service management &amp; monitoring</b><span>ServiceDesk Plus, Nexthink, Desktop Central</span></li>
+            <li><b>Infrastructure &amp; collaboration</b><span>Exchange, networking, IP telephony, DHCP</span></li>
+            <li><b>Banking systems</b><span>ATMs and branch technology</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="awards">
       <div class="sec-head reveal">
-        <span class="mono">(03) — Recognition</span>
+        <span class="mono">(06) — Recognition</span>
         <h2>Awards<span class="accent">.</span></h2>
       </div>
       <div class="awards">
-        <div class="award reveal"><span class="yr">2026</span><b>3rd Place — Motawerkw</b><span class="mono">Central Bank of Kuwait</span></div>
+        <div class="award reveal"><span class="yr">2026</span><b>3rd Place, Motawerkw — Pay WAFI</b><span class="mono">Central Bank of Kuwait</span></div>
         <div class="award reveal"><span class="yr">2026</span><b>AI Transformation Technical Owner</b><span class="mono">Boubyan Bank</span></div>
-        <div class="award reveal"><span class="yr">2025</span><b>OHI Champion for ITG</b><span class="mono">Boubyan Bank</span></div>
+        <div class="award reveal"><span class="yr">2025</span><b>OHI Champion for IT Group</b><span class="mono">Boubyan Bank</span></div>
         <div class="award reveal"><span class="yr">2025</span><b>HR Learning Champion</b><span class="mono">Boubyan Bank</span></div>
         <div class="award reveal"><span class="yr">2023</span><b>High Potential Employee Pool</b><span class="mono">Boubyan Bank</span></div>
-        <div class="award reveal"><span class="yr">2022</span><b>CXM Q2 Award</b><span class="mono">Boubyan Bank</span></div>
-        <div class="award reveal"><span class="yr">2021</span><b>CXM Q3 Award</b><span class="mono">Boubyan Bank</span></div>
-        <div class="award reveal"><span class="yr">2021</span><b>Best Employee</b><span class="mono">Boubyan Bank</span></div>
         <div class="award reveal"><span class="yr">2021</span><b>Best Lean Project Award (Bank-wide)</b><span class="mono">Boubyan Bank</span></div>
-        <div class="award reveal"><span class="yr">2019</span><b>CXM Q2 Award</b><span class="mono">Boubyan Bank</span></div>
+        <div class="award reveal"><span class="yr">2021</span><b>Best Employee</b><span class="mono">Boubyan Bank</span></div>
+        <div class="award reveal"><span class="yr">2019–22</span><b>CXM Awards — Q2 2019, Q3 2021, Q2 2022</b><span class="mono">Boubyan Bank</span></div>
         <div class="award reveal"><span class="yr">2015</span><b>GCC Robotics Competition — 2nd Place</b><span class="mono">December 2015</span></div>
+      </div>
+      <div class="committees reveal">
+        <span class="mono">Committees &amp; memberships</span>
+        <ul>
+          <li><span class="mono">2022</span>IT Engage Team, Boubyan Bank</li>
+          <li><span class="mono">2017</span>Data Center Disaster Recovery Committee, Ministry of Finance</li>
+          <li><span class="mono">2017</span>SharePoint Infrastructure Team, Ministry of Finance</li>
+          <li><span class="mono">2016</span>Media Committee, Computer Engineering Society</li>
+          <li><span class="mono">2010–14</span>Student Union, including Head of Media Committee (2012)</li>
+        </ul>
       </div>
     </section>
 
     <section id="education">
       <div class="sec-head reveal">
-        <span class="mono">(04) — Learning</span>
+        <span class="mono">(07) — Learning</span>
         <h2>Education<span class="accent">.</span></h2>
       </div>
       <div class="degree reveal">
@@ -519,83 +758,55 @@
         </div>
         <span class="big">'16</span>
       </div>
+      <span class="sub-label mono">Leadership &amp; executive education</span>
       <div class="courses reveal">
-        <div class="course"><time class="mono">Dec 2025</time><div>Final Stage of Motawerkw<small>Central Bank of Kuwait</small></div></div>
-        <div class="course"><time class="mono">Dec 2025</time><div>Innovation Challenge — Executive Education<small>Imperial College London</small></div></div>
-        <div class="course"><time class="mono">Jul 2024</time><div>Exercising Leadership<small>Harvard Online</small></div></div>
-        <div class="course"><time class="mono">Jun 2023</time><div>Aspiring Leaders</div></div>
-        <div class="course"><time class="mono">May 2023</time><div>Blue Prism Foundation Training<small>Coursera</small></div></div>
-        <div class="course"><time class="mono">May 2023</time><div>Coursera 2023 — Main Program<small>Coursera</small></div></div>
-        <div class="course"><time class="mono">Nov 2022</time><div>VMware Explore 2022 Europe</div></div>
-        <div class="course"><time class="mono">Nov 2022</time><div>Full-Stack Web Development</div></div>
-        <div class="course"><time class="mono">Oct 2022</time><div>Managerial Presence &amp; Communication Excellence</div></div>
-        <div class="course"><time class="mono">Oct 2022</time><div>Project Structuring for Sound Execution</div></div>
-        <div class="course"><time class="mono">Oct 2022</time><div>Coaching Skills &amp; Effective Feedback Mechanisms</div></div>
-        <div class="course"><time class="mono">Aug 2022</time><div>Lean Management</div></div>
-        <div class="course"><time class="mono">Aug 2022</time><div>Mini MBA</div></div>
-        <div class="course"><time class="mono">Jun 2022</time><div>Advanced Negotiation &amp; Managing Disputes</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Developing Secure Software</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Security Tips</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Mindful Stress Management</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Learning Cryptography &amp; Network Security</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Improving Your Listening Skills</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Graphic Design Tips &amp; Tricks</div></div>
-        <div class="course"><time class="mono">Dec 2021</time><div>Google Ads Essential Training</div></div>
-        <div class="course"><time class="mono">Jun 2021</time><div>Tabletop Exercise — ISO 27001 &amp; CBK Cyber Security Framework<small>Group 2</small></div></div>
-        <div class="course"><time class="mono">Nov 2020</time><div>Innovation with Design Thinking</div></div>
-        <div class="course"><time class="mono">Oct 2020</time><div>Effective Problem Solving &amp; Decision Making in the Workplace</div></div>
-        <div class="course"><time class="mono">Sep 2020</time><div>IT Security Awareness</div></div>
-        <div class="course"><time class="mono">Jul 2020</time><div>Building High-Performance Teams</div></div>
-        <div class="course"><time class="mono">Oct 2019</time><div>Supervisory Skills for First-Time Leaders</div></div>
-        <div class="course"><time class="mono">Aug 2019</time><div>Business Etiquette</div></div>
-        <div class="course"><time class="mono">Apr 2019</time><div>ITIL v3 Foundation Certificate</div></div>
-        <div class="course"><time class="mono">May 2017</time><div>VMware</div></div>
-        <div class="course"><time class="mono">Apr 2017</time><div>Windows Server 2012</div></div>
-        <div class="course"><time class="mono">Jan 2017</time><div>Microsoft Azure Conference</div></div>
-        <div class="course"><time class="mono">Jan 2016</time><div>iOS Application Development<small>CPE</small></div></div>
-        <div class="course"><time class="mono">Jan 2016</time><div>Unity 3D</div></div>
-        <div class="course"><time class="mono">Jan 2016</time><div>Swift</div></div>
+        <div class="course key"><time class="mono">Dec 2025</time><div>Innovation Challenge — Executive Education<small>Imperial College London</small></div></div>
+        <div class="course key"><time class="mono">Dec 2025</time><div>Motawerkw, Final Stage<small>Central Bank of Kuwait</small></div></div>
+        <div class="course key"><time class="mono">Jul 2024</time><div>Exercising Leadership<small>Harvard Online</small></div></div>
+        <div class="course key"><time class="mono">Jun 2023</time><div>Aspiring Leaders</div></div>
+        <div class="course key"><time class="mono">Aug 2022</time><div>Mini MBA</div></div>
+        <div class="course key"><time class="mono">Aug 2022</time><div>Lean Management</div></div>
+        <div class="course key"><time class="mono">Jun 2022</time><div>Advanced Negotiation &amp; Managing Disputes</div></div>
+        <div class="course key"><time class="mono">Oct 2022</time><div>Coaching Skills &amp; Effective Feedback</div></div>
+        <div class="course key"><time class="mono">Apr 2019</time><div>ITIL v3 Foundation Certificate</div></div>
       </div>
+      <details class="all">
+        <summary><span class="pill"><span class="open-label">Show all 35 courses ↓</span><span class="close-label">Hide courses ↑</span></span></summary>
+        <div class="courses">
+          <div class="course"><time class="mono">May 2023</time><div>Blue Prism Foundation Training<small>Coursera</small></div></div>
+          <div class="course"><time class="mono">May 2023</time><div>Coursera 2023 — Main Program<small>Coursera</small></div></div>
+          <div class="course"><time class="mono">Nov 2022</time><div>VMware Explore 2022 Europe</div></div>
+          <div class="course"><time class="mono">Nov 2022</time><div>Full-Stack Web Development</div></div>
+          <div class="course"><time class="mono">Oct 2022</time><div>Managerial Presence &amp; Communication Excellence</div></div>
+          <div class="course"><time class="mono">Oct 2022</time><div>Project Structuring for Sound Execution</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Developing Secure Software</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Security Tips</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Mindful Stress Management</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Learning Cryptography &amp; Network Security</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Improving Your Listening Skills</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Graphic Design Tips &amp; Tricks</div></div>
+          <div class="course"><time class="mono">Dec 2021</time><div>Google Ads Essential Training</div></div>
+          <div class="course"><time class="mono">Jun 2021</time><div>Tabletop Exercise — ISO 27001 &amp; CBK Cyber Security Framework<small>Group 2</small></div></div>
+          <div class="course"><time class="mono">Nov 2020</time><div>Innovation with Design Thinking</div></div>
+          <div class="course"><time class="mono">Oct 2020</time><div>Effective Problem Solving &amp; Decision Making in the Workplace</div></div>
+          <div class="course"><time class="mono">Sep 2020</time><div>IT Security Awareness</div></div>
+          <div class="course"><time class="mono">Jul 2020</time><div>Building High-Performance Teams</div></div>
+          <div class="course"><time class="mono">Oct 2019</time><div>Supervisory Skills for First-Time Leaders</div></div>
+          <div class="course"><time class="mono">Aug 2019</time><div>Business Etiquette</div></div>
+          <div class="course"><time class="mono">May 2017</time><div>VMware</div></div>
+          <div class="course"><time class="mono">Apr 2017</time><div>Windows Server 2012</div></div>
+          <div class="course"><time class="mono">Jan 2017</time><div>Microsoft Azure Conference</div></div>
+          <div class="course"><time class="mono">Jan 2016</time><div>iOS Application Development<small>CPE</small></div></div>
+          <div class="course"><time class="mono">Jan 2016</time><div>Unity 3D</div></div>
+          <div class="course"><time class="mono">Jan 2016</time><div>Swift</div></div>
+        </div>
+      </details>
     </section>
-
-    <section id="memberships">
-      <div class="sec-head reveal">
-        <span class="mono">(05) — Community</span>
-        <h2>Member&shy;ships<span class="accent">.</span></h2>
-      </div>
-      <div class="groups">
-        <div class="group reveal">
-          <h3>Boubyan Bank</h3>
-          <ul><li><span class="mono">2022</span>IT Engage Team</li></ul>
-        </div>
-        <div class="group reveal">
-          <h3>Ministry of Finance</h3>
-          <ul>
-            <li><span class="mono">2017</span>Data Center Disaster Recovery Committee</li>
-            <li><span class="mono">2017</span>SharePoint Infrastructure Team</li>
-          </ul>
-        </div>
-        <div class="group reveal">
-          <h3>Computer Engineering Society</h3>
-          <ul><li><span class="mono">2016</span>Media Committee Member</li></ul>
-        </div>
-        <div class="group reveal">
-          <h3>Student Union</h3>
-          <ul>
-            <li><span class="mono">2014</span>Member</li>
-            <li><span class="mono">2013</span>Media Committee Member</li>
-            <li><span class="mono">2012</span>Head of Media Committee</li>
-            <li><span class="mono">2011</span>Media Committee Member</li>
-            <li><span class="mono">2010</span>Member</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <footer id="contact">
     <div class="wrap">
-      <span class="mono">(06) — Contact</span>
+      <span class="mono">(08) — Contact</span>
       <a class="cta" href="mailto:abinhussainmof@hotmail.com">Let's<br>talk <span>↗</span></a>
       <div class="contact-grid">
         <a href="mailto:abinhussainmof@hotmail.com"><span class="mono">Email</span><b>abinhussainmof@hotmail.com</b></a>
